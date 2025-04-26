@@ -6,7 +6,7 @@ uniform mat4 mv_matrix;
 
 // Input vertex attributes from VBO
 layout (location = 0) in vec3 iPosition; // VBO: vbo[0]
-layout (location = 1) in vec3 iNormal; // VBO: vbo[1]
+layout (location = 1) in vec3 iNormal;   // VBO: vbo[1]
 
 // Output to fragment shader for lighting calculation
 out vec4 position;

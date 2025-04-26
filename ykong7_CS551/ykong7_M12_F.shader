@@ -88,6 +88,7 @@ void main() {
     vec4 I3s = Ms * L3d * pow(Ns3, Msh); 
  
     // Sum all lighting contributions and ensure reasonable range for color
-    fColor = (Ie + Ia + (Id + I1d + I2d + I3d) + (Is + I1s + I2s + I3s)) / 3.0;
+    // Dividing by 2.0 instead of 3.0 to make the lighting brighter
+    fColor = (Ie + Ia + (Id + I1d + I2d + I3d) + (Is + I1s + I2s + I3s)) / 1.5;
     fColor.a = 1.0; // Ensure full opacity
 }
