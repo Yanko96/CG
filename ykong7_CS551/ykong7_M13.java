@@ -43,7 +43,7 @@ public class ykong7_M13 extends JOGL4_3_Antialiasing {
         drawViewport(WIDTH/2, HEIGHT/2, WIDTH/2, HEIGHT/2, fogTexture, 3);
     }
     
-    private void drawViewport(int x, int y, int width, int height, int textureId, int viewportIndex) {
+    public void drawViewport(int x, int y, int width, int height, int textureId, int viewportIndex) {
         gl.glViewport(x, y, width, height);
         gl.glActiveTexture(GL_TEXTURE0);
         gl.glBindTexture(GL_TEXTURE_2D, textureId);
@@ -119,6 +119,11 @@ public class ykong7_M13 extends JOGL4_3_Antialiasing {
     }
     
     public void init(GLAutoDrawable drawable) {
+        // 先调用父类init
+        super.init(drawable);
+        
+        // 额外启用纹理坐标属性
+        gl.glEnableVertexAttribArray(2);
         gl = (GL4) drawable.getGL();
         String vShaderSource[], fShaderSource[];
                     
